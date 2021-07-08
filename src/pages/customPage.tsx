@@ -13,8 +13,8 @@ export default function CustomPage() {
         try {
             const input = {
                 data: {
-                    userName: 'myUserName',
-                    isAdmin: false,
+                    // userName: 'myUserName',
+                    // isAdmin: false,
                     email: 'myEmail@mail.com'
                 }
             };
@@ -28,7 +28,7 @@ export default function CustomPage() {
         <div>
             <h1> Form </h1>
             <ProfileForm user={user} />
-            <button onClick={handleClick}>Créer le profil</button>
+            {/* <button onClick={handleClick}>Créer le profil</button> */}
             <h2> Insert code here : {CustomUser.graphql.defaultFragment} </h2>
             <h2>Profile</h2>
             {user && <p>Your session: {JSON.stringify(user)}</p>}

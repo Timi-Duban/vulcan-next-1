@@ -1,6 +1,7 @@
 /**
  * I am a sample model
  * Replace me with your own
+ * Remember to also update the index
  */
 import { VulcanSchema, VulcanDocument } from "@vulcanjs/schema";
 import {

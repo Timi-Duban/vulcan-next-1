@@ -31,7 +31,7 @@ const schema: VulcanSchema = {
     type: String,
     optional: true,
     canRead: ["guests"],
-    canUpdate: ["admins"],
+    canUpdate: ["owners", "admins"],
     canCreate: ["owners"],
     searchable: true,
   },
@@ -69,7 +69,7 @@ const name = "CustomUser" // Change this value when creating your own model
 const typeName = name
 const multiTypeName = "CustomUsers" // Change this value when creating your own model
 export const CustomUser = createGraphqlModel({
-  name: "customUser",
+  name: "CustomUser",
   schema,
   graphql: {
     typeName,
