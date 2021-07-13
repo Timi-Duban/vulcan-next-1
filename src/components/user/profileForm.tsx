@@ -14,7 +14,8 @@ const ProfileForm = (props) => {
                 const input = {
                     id: "60e305d3ae8e4f564073a455",
                     data: {
-                        username: newName
+                        // selector: {email: 'myEmail@mail.com'},
+                        username: newName,
                     },
                 };
                 await updateCustomUser({ input });
