@@ -50,7 +50,8 @@ const schema: VulcanSchema = {
     regEx: SimpleSchema.RegEx.Email,
     // mustComplete: true,
     input: "text",
-    canCreate: ["members"],
+    // canCreate: ["members"],
+    canCreate: ["guests","members", "admins"],
     canUpdate: ["owners", "admins"],
     canRead: ["owners", "admins"],
     searchable: true,
@@ -61,8 +62,8 @@ const schema: VulcanSchema = {
 
 export interface CustomUserType extends VulcanDocument {
   username: string,
-  isAdmin: Boolean,
-  email: String
+  isAdmin: boolean,
+  email: string
 }
 
 const name = "CustomUser" // Change this value when creating your own model
@@ -80,7 +81,7 @@ export const CustomUser = createGraphqlModel({
     }),
   },
   permissions: {
-    canCreate: ["guests"],
+    canCreate: ["guests", "members", "admins"],
     canUpdate: ["owners", "admins"],
     canDelete: ["owners", "admins"],
     canRead: ["members", "admins"],

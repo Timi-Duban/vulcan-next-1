@@ -12,9 +12,12 @@ const ProfileForm = (props) => {
                 evt.stopPropagation();
                 const newName = (evt.target as any).newName.value;
                 const input = {
-                    id: "60e305d3ae8e4f564073a455",
+                    // id: "60e305d3ae8e4f564073a455",
+                    filter: {
+                        email: {_eq: 'myEmail@mail.com'}
+                        // _id: {_eq: "60e305d3ae8e4f564073a455"}
+                    },
                     data: {
-                        // selector: {email: 'myEmail@mail.com'},
                         username: newName,
                     },
                 };

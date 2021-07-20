@@ -3,4 +3,5 @@
 import { SampleModel } from "./sampleModel";
 import { User } from "./user";
 import { CustomUser } from "./customUser";
-export default [User, SampleModel, CustomUser];
+import {CustomType} from "./customType";
+export default [User, SampleModel, CustomUser, CustomType];

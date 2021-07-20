@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useCreate, useDelete } from "@vulcanjs/react-hooks";
+import { useCreate,useDelete } from "@vulcanjs/react-hooks";
 import { useUser } from "~/components/user/hooks";
 import { CustomUser } from "~/models/customUser";
 import ProfileForm from "../components/user/profileForm"
@@ -29,7 +29,10 @@ export default function CustomPage() {
         console.log("Suppression");
         try {
             const input = {
-                id: '60ec594be4948215a6be0376'
+                // id: '60ec594be4948215a6be0376'
+                filter: {
+                    email: {_eq: "myEmail2@mail.com"}
+                },
             };
             await deleteCustomUser({ input });
         } catch (err) {
@@ -43,7 +46,7 @@ export default function CustomPage() {
             <ProfileForm user={user} />
             <button onClick={handleClick}>Créer le profil</button>
             <button onClick={handleClickDelete}>Supprimer le profil</button>
-            <h2> Insert code here : {CustomUser.graphql.defaultFragment} </h2>
+            <p> Insert code here : {CustomUser.graphql.defaultFragment} </p>
             <h2>Profile</h2>
             {user && <p>Your session: {JSON.stringify(user)}</p>}
         </div>
